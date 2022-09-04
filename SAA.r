@@ -4,7 +4,7 @@ SAA<-function (strata, errors, suggestions = NULL,
                          Temp=NA,initialStrata, decrement_constant=0.95, end_time =140,
                          showSettings = FALSE, jsize=100,length_of_markov_chain =50,
                          verbose = FALSE, dominio=NULL,minnumstrat=NULL,kmax_percent=0.025,ProbNewStratum=NA,
-                         strcens=FALSE,writeFiles=FALSE, showPlot=TRUE, minTemp = 0.0005, realAllocation=TRUE)
+                         strcens=FALSE,writeFiles=FALSE, minTemp = 0.0005, realAllocation=TRUE)
 {
 
 
