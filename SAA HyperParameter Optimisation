@@ -48,7 +48,7 @@ HyperparametersFunction<-function(x){
   cat("kmax_percent", kmax_percent,"\n")
   cat("ProbNewStratum", ProbNewStratum,"\n")
 
-  solution <-  parallelSA_IE2_K_2021(strata=strata,errors=cv_experiment,
+  solution <-  parallelSAA(strata=strata,errors=cv_experiment,
                                              sugg=kmean ,
                                              Temp=Temp,initialStrata=nstrata, decrement_constant=decrement_constant,
                                              end_time =Inf,
@@ -67,7 +67,7 @@ objfun2 = makeSingleObjectiveFunction(
   fn = HyperparametersFunction,
   par.set = makeParamSet(
     makeDiscreteParam("jsize", values = seq(10,50,10)),
-    makeDiscreteParam("length_of_markov_chain", values =seq(1000,3000,1000)),
+    makeDiscreteParam("length_of_markov_chain", values =seq(100,300,100)),
     makeNumericParam("Temp", lower = 0,upper = 0.001),
     makeNumericParam("decrement_constant", lower = 0.5,upper = 1),
     makeNumericParam("kmax_percent", lower = 0.0001,upper = 0.025),
@@ -156,3 +156,4 @@ run2$final.state
 sink()
 
 write(SATuningTime,"SATuningTime.csv")
+
