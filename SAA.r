@@ -1,3 +1,0 @@
-#'@importFrom cluster pam
-#'@export
-
